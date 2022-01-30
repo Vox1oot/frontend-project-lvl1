@@ -1,0 +1,10 @@
+name: linter
+
+on: [push, pull_request]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run linter
+      - run: make lint
