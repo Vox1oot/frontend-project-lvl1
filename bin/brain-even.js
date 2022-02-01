@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import * as user from './brain-games.js';
+import getUserName, { greetings } from '../src/cli.js';
 
 /* Function return random integer number */
 const generateRandomNumber = () => Math.floor(Math.random() * 100);
+
+/* greetings user */
+greetings();
+
+/* user name */
+const userName = getUserName();
+
+console.log(`Hello, ${userName}!`);
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -22,11 +30,11 @@ for (let i = 0; i < 3;) {
   } else {
     const correntAnswer = checkingNumber % 2 === 0 ? 'yes' : 'no';
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correntAnswer}'`);
-    console.log(`Let's try again, ${user.userName} !`);
+    console.log(`Let's try again, ${userName} !`);
     break;
   }
 
   if (i === 3) {
-    console.log(`Congratulations, ${user.userName} !`);
+    console.log(`Congratulations, ${userName} !`);
   }
 }
