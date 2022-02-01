@@ -14,6 +14,29 @@ const getRandomOperator = () => {
   return arr[index];
 };
 
+/* The function return searching value */
+const getSearchingValue = (firstNumber, secondNumber, operator) => {
+  let result;
+
+  switch (operator) {
+    case '+':
+      console.log(`Question: ${firstNumber} + ${secondNumber}`);
+      result = firstNumber + secondNumber;
+      break;
+    case '-':
+      console.log(`Question: ${firstNumber} - ${secondNumber}`);
+      result = firstNumber - secondNumber;
+      break;
+    case '*':
+      console.log(`Question: ${firstNumber} * ${secondNumber}`);
+      result = firstNumber * secondNumber;
+      break;
+    default:
+      break;
+  }
+  return result;
+};
+
 greetings();
 const userName = getUserName();
 helloUser(userName);
@@ -25,32 +48,14 @@ const startBrainCalc = () => {
     const firstOperator = generateRandomNumber();
     const secondOperator = generateRandomNumber();
     const operator = getRandomOperator();
-    let result = 0;
-
-    switch (operator) {
-      case '+':
-        console.log(`Question: ${firstOperator} + ${secondOperator}`);
-        result = firstOperator + secondOperator;
-        break;
-      case '-':
-        console.log(`Question: ${firstOperator} - ${secondOperator}`);
-        result = firstOperator - secondOperator;
-        break;
-      case '*':
-        console.log(`Question: ${firstOperator} * ${secondOperator}`);
-        result = firstOperator * secondOperator;
-        break;
-      default:
-        break;
-    }
-
+    const seacrhingvalue = getSearchingValue(firstOperator, secondOperator, operator);
     const currentAnswer = (readlineSync.question('Your answer: '));
 
-    if (Number(currentAnswer) === result) {
+    if (Number(currentAnswer) === seacrhingvalue) {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`'${currentAnswer}' is wrong answer ;(. Correct answer was ${result}`);
+      console.log(`'${currentAnswer}' is wrong answer ;(. Correct answer was ${seacrhingvalue}`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
