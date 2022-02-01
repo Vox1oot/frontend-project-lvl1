@@ -6,6 +6,19 @@ import congratulation, { greetings, helloUser } from '../src/messages.js';
 /* Function return random integer number */
 const generateRandomNumber = () => Math.floor(Math.random() * 100);
 
+const isCorrect = (num, answer) => {
+  let result;
+
+  if (num % 2 === 0 && answer === 'yes') {
+    result = true;
+  } else if (num % 2 !== 0 && answer === 'no') {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+};
+
 /* greetings user */
 greetings();
 
@@ -14,17 +27,17 @@ const userName = getUserName();
 
 helloUser(userName);
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
 const startBrainEven = () => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3;) {
     const checkingNumber = generateRandomNumber();
     console.log(`Question: ${checkingNumber}`);
+
     const userAnswer = readlineSync.question('Your answer? ').toLowerCase();
-    if (checkingNumber % 2 === 0 && userAnswer === 'yes') {
-      console.log('Correct!');
-      i += 1;
-    } else if (checkingNumber % 2 !== 0 && userAnswer === 'no') {
+
+    const result = isCorrect(checkingNumber, userAnswer);
+
+    if (result) {
       console.log('Correct!');
       i += 1;
     } else {
