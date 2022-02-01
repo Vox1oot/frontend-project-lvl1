@@ -34,14 +34,13 @@ const startBrainEven = () => {
     console.log(`Question: ${checkingNumber}`);
 
     const userAnswer = readlineSync.question('Your answer? ').toLowerCase();
-
     const result = isCorrect(checkingNumber, userAnswer);
+    const currentAnswer = checkingNumber % 2 === 0 ? 'yes' : 'no';
 
     if (result) {
       console.log('Correct!');
       i += 1;
     } else {
-      const currentAnswer = checkingNumber % 2 === 0 ? 'yes' : 'no';
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${currentAnswer}'`);
       console.log(`Let's try again, ${userName} !`);
       break;

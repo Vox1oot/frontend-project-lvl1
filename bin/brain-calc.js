@@ -44,9 +44,9 @@ const startBrainCalc = () => {
         break;
     }
 
-    const currentAnswer = Number(readlineSync.question('Your answer: '));
+    const currentAnswer = (readlineSync.question('Your answer: '));
 
-    if (currentAnswer === result) {
+    if (Number(currentAnswer) === result) {
       console.log('Correct!');
       i += 1;
     } else {
