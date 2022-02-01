@@ -43,8 +43,9 @@ helloUser(userName);
 
 const startBrainCalc = () => {
   console.log('What is the result of the expression?');
+  let countOfCorrectAnswer = 0;
 
-  for (let i = 0; i < 3;) {
+  for (let i = 0; i < 3; i += 1) {
     const firstOperator = generateRandomNumber();
     const secondOperator = generateRandomNumber();
     const operator = getRandomOperator();
@@ -53,16 +54,15 @@ const startBrainCalc = () => {
 
     if (Number(currentAnswer) === seacrhingvalue) {
       console.log('Correct!');
-      i += 1;
+      countOfCorrectAnswer += 1;
     } else {
       console.log(`'${currentAnswer}' is wrong answer ;(. Correct answer was ${seacrhingvalue}`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
-
-    if (i === 3) {
-      congratulation(userName);
-    }
+  }
+  if (countOfCorrectAnswer === 3) {
+    congratulation(userName);
   }
 };
 
