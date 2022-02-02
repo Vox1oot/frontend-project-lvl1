@@ -17,6 +17,7 @@ const startGame = (rules, getRaundData) => {
     console.log(`Question: ${question}`);
 
     const userResponse = readlineSync.question('Your answer? ');
+
     if (userResponse === correctAnswer) {
       console.log('Correct!');
     } else {
