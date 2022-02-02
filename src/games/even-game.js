@@ -1,4 +1,3 @@
-import startGame from '../index.js';
 import getRandomNumber from '../random-number.js';
 
 export const ruleIsEven = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -10,5 +9,4 @@ const generatorIsEven = () => {
   return [currentNumber, correctAnswer];
 };
 
-startGame(ruleIsEven, generatorIsEven);
 export default generatorIsEven;
