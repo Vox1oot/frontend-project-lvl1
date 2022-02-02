@@ -32,6 +32,7 @@ const getSearchingValue = (firstNumber, secondNumber, operator) => {
       result = firstNumber * secondNumber;
       break;
     default:
+      console.log('Unknow this operator');
       break;
   }
   return result;
