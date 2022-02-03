@@ -3,14 +3,17 @@ import getRandomNumber from '../random-number.js';
 export const ruleGCD = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (a, b) => {
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a = a % b;
+  let firstNumber = a;
+  let secondBUmber = b;
+
+  while (firstNumber !== 0 && secondBUmber !== 0) {
+    if (firstNumber > secondBUmber) {
+      firstNumber %= secondBUmber;
     } else {
-      b = b % a;
+      secondBUmber %= firstNumber;
     }
   }
-  return a + b;
+  return firstNumber + secondBUmber;
 };
 
 const generatorGCD = () => {
