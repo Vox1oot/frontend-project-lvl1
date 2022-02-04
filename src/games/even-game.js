@@ -6,6 +6,7 @@ const isEven = (number) => number % 2 === 0; /* return true ot false */
 const generatorIsEven = () => {
   const currentNumber = getRandomNumber(0, 50);
   const correctAnswer = isEven(currentNumber) ? 'yes' : 'no';
+
   return [currentNumber, correctAnswer];
 };
 

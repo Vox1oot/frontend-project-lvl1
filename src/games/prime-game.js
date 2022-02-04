@@ -10,12 +10,14 @@ const isPrime = (number) => {
       return false;
     }
   }
+
   return result;
 };
 
 const generatorIsPrime = () => {
   const question = getRandomNumber(3, 50);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
+
   return [question, correctAnswer];
 };
 

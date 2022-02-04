@@ -19,6 +19,7 @@ const generatorProgression = () => {
 
   const question = tempArray.join(' ');
   const correctAnswer = array[index].toString();
+
   return [question, correctAnswer];
 };
 

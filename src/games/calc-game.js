@@ -25,6 +25,7 @@ const getSearchingValue = (firstNumber, secondNumber, operator) => {
     default:
       break;
   }
+
   return result;
 };
 
@@ -36,6 +37,7 @@ const generatorCalc = () => {
   const operator = getRandomOperator();
   const question = `${firstNumber} ${operator} ${secondNumber} `;
   const correctAnswer = getSearchingValue(firstNumber, secondNumber, operator).toString();
+
   return [question, correctAnswer];
 };
 

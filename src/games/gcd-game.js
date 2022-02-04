@@ -13,6 +13,7 @@ const getGCD = (a, b) => {
       secondBUmber %= firstNumber;
     }
   }
+
   return firstNumber + secondBUmber;
 };
 
@@ -21,6 +22,7 @@ const generatorGCD = () => {
   const secondNumber = getRandomNumber(0, 50);
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = getGCD(firstNumber, secondNumber).toString();
+
   return [question, correctAnswer];
 };
 
