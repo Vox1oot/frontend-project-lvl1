@@ -17,8 +17,8 @@ const getGCD = (a, b) => {
 };
 
 const generatorGCD = () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = getRandomNumber(0, 50);
+  const secondNumber = getRandomNumber(0, 50);
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = getGCD(firstNumber, secondNumber).toString();
   return [question, correctAnswer];

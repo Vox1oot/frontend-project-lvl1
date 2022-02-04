@@ -3,7 +3,7 @@ import getRandomNumber from '../random-number.js';
 /* The function return random operator */
 const getRandomOperator = () => {
   const arr = ['+', '-', '*'];
-  const index = Math.floor(Math.random() * 3);
+  const index = getRandomNumber(0, 3);
 
   return arr[index];
 };
@@ -31,8 +31,8 @@ const getSearchingValue = (firstNumber, secondNumber, operator) => {
 export const ruleIsCalc = 'What is the result of the expression?';
 
 const generatorCalc = () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = getRandomNumber(0, 50);
+  const secondNumber = getRandomNumber(0, 50);
   const operator = getRandomOperator();
   const question = `${firstNumber} ${operator} ${secondNumber} `;
   const correctAnswer = getSearchingValue(firstNumber, secondNumber, operator).toString();
