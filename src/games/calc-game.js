@@ -5,23 +5,16 @@ const operators = ['+', '-', '*'];
 
 /* The function return searching value */
 const getSearchingValue = (firstNumber, secondNumber, operator) => {
-  let result;
-
   switch (operator) {
     case '+':
-      result = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
     case '-':
-      result = firstNumber - secondNumber;
-      break;
+      return firstNumber - secondNumber;
     case '*':
-      result = firstNumber * secondNumber;
-      break;
+      return firstNumber * secondNumber;
     default:
-      break;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
-
-  return result;
 };
 
 export const ruleIsCalc = 'What is the result of the expression?';
@@ -37,6 +30,5 @@ const generatorCalc = () => {
 };
 
 const startCalcGame = () => startGame(ruleIsCalc, generatorCalc);
-startCalcGame();
 
 export default startCalcGame;
