@@ -1,3 +1,4 @@
+import startGame from '../index.js';
 import getRandomNumber from '../random-number.js';
 
 export const rulePrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -21,4 +22,6 @@ const generatorIsPrime = () => {
   return [question, correctAnswer];
 };
 
-export default generatorIsPrime;
+const startIsPrimeGame = () => startGame(rulePrime, generatorIsPrime);
+
+export default startIsPrimeGame;

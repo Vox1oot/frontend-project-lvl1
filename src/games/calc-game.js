@@ -1,3 +1,4 @@
+import startGame from '../index.js';
 import getRandomNumber from '../random-number.js';
 
 /* The function return random operator */
@@ -41,4 +42,6 @@ const generatorCalc = () => {
   return [question, correctAnswer];
 };
 
-export default generatorCalc;
+const startCalcGame = () => startGame(ruleIsCalc, generatorCalc);
+
+export default startCalcGame;
