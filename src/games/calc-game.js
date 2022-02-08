@@ -1,13 +1,7 @@
 import startGame from '../index.js';
 import getRandomNumber from '../random-number.js';
 
-/* The function return random operator */
-const getRandomOperator = () => {
-  const arr = ['+', '-', '*'];
-  const index = getRandomNumber(0, 2);
-
-  return arr[index];
-};
+const operators = ['+', '-', '*'];
 
 /* The function return searching value */
 const getSearchingValue = (firstNumber, secondNumber, operator) => {
@@ -35,7 +29,7 @@ export const ruleIsCalc = 'What is the result of the expression?';
 const generatorCalc = () => {
   const firstNumber = getRandomNumber(0, 50);
   const secondNumber = getRandomNumber(0, 50);
-  const operator = getRandomOperator();
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
   const question = `${firstNumber} ${operator} ${secondNumber} `;
   const correctAnswer = getSearchingValue(firstNumber, secondNumber, operator).toString();
 
@@ -43,5 +37,6 @@ const generatorCalc = () => {
 };
 
 const startCalcGame = () => startGame(ruleIsCalc, generatorCalc);
+startCalcGame();
 
 export default startCalcGame;
