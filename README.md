@@ -11,9 +11,7 @@ This repository contains sources code my first project: **"Brain games".**
 1. install node js
 2. intsall npm
 3. install make
-4. clone repository:
-  4.1 **https://github.com/Vox1oot/frontend-project-lvl1.git**
-  4.2 **git@github.com:Vox1oot/frontend-project-lvl1.git**
+4. clone repository: https://github.com/Vox1oot/frontend-project-lvl1.git
 5. change directory to frontend-project-lvl1
 6. run the command: ```make install```
 7. run the command: ```npm link```
