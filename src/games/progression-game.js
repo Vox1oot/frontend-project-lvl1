@@ -3,25 +3,26 @@ import getRandomNumber from '../random-number.js';
 
 export const ruleProgression = 'What number is missing in the progression?';
 
-const buildProgression = () => {
+const buildProgression = (initialNumber, stepProgression, progressionLenght) => {
   const numbers = [];
 
-  let beginNumber = getRandomNumber(1, 100);
-  const iteratorProgression = getRandomNumber(1, 10);
-
-  for (let i = 0; i < 10; i += 1) {
-    numbers.push(beginNumber += iteratorProgression);
+  for (let i = 0; i < progressionLenght; i += 1) {
+    const currentNumber = initialNumber + (i * stepProgression);
+    numbers.push(currentNumber);
   }
 
   return numbers;
 };
 
 const generatorProgression = () => {
-  const progressionNumbers = buildProgression();
+  const initialNumber = getRandomNumber(1, 100);
+  const stepProgression = getRandomNumber(1, 10);
+  const progressionLenght = getRandomNumber(5, 10); //  recomended use range from 5 to 10
+  const progressionNumbers = buildProgression(initialNumber, stepProgression, progressionLenght);
 
   const index = getRandomNumber(0, 9);
 
-  const tempArray = [].concat(progressionNumbers);
+  const tempArray = [...progressionNumbers];
   tempArray[index] = '..';
 
   const question = tempArray.join(' ');
@@ -31,5 +32,6 @@ const generatorProgression = () => {
 };
 
 const startProgressionGame = () => startGame(ruleProgression, generatorProgression);
+startProgressionGame(); //  delete
 
 export default startProgressionGame;
