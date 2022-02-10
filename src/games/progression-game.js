@@ -20,7 +20,7 @@ const generatorProgression = () => {
   const progressionLenght = getRandomNumber(5, 10); //  recomended use range from 5 to 10
   const progressionNumbers = buildProgression(initialNumber, stepProgression, progressionLenght);
 
-  const index = getRandomNumber(0, 9);
+  const index = getRandomNumber(0, progressionLenght - 1);
 
   const tempArray = [...progressionNumbers];
   tempArray[index] = '..';
