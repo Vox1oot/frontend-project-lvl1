@@ -3,6 +3,7 @@ import getRandomNumber from '../random-number.js';
 
 export const ruleProgression = 'What number is missing in the progression?';
 
+/* this function return a numerical progression */
 const buildProgression = (initialNumber, stepProgression, progressionLenght) => {
   const numbers = [];
 
