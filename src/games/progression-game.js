@@ -32,6 +32,5 @@ const generatorProgression = () => {
 };
 
 const startProgressionGame = () => startGame(ruleProgression, generatorProgression);
-startProgressionGame(); //  delete
 
 export default startProgressionGame;
