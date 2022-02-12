@@ -1,6 +1,8 @@
 import startGame from '../index.js';
 import getRandomNumber from '../random-number.js';
 
+export const ruleIsCalc = 'What is the result of the expression?';
+
 const operators = ['+', '-', '*'];
 
 /* The function return searching value */
@@ -16,8 +18,6 @@ const getSearchingValue = (firstNumber, secondNumber, operator) => {
       throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
-
-export const ruleIsCalc = 'What is the result of the expression?';
 
 const generatorCalc = () => {
   const firstNumber = getRandomNumber(0, 50);
